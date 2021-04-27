@@ -20,9 +20,7 @@ class App extends Component {
 
         <main>
           <CreatureList creature={creatures} />
-          <li>
-            Hello!
-          </li>
+
 
         </main>
 
