@@ -6,3 +6,7 @@
   background: lightblue;
 }
 
+.App main {
+  overflow: auto;
+}
+
