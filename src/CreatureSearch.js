@@ -5,11 +5,14 @@ export default class CreatureSearch extends Component {
 
   render() {
     return (
-      <form>
-        <div className="CreatureSearch">
-          Wire in search component
-
-        </div>
+      <form className='CreatureSearch'>
+        <input />
+        <select>
+          <option value="">sort...</option>
+          <option value="name">by name</option>
+          <option value="horns">by horns</option>
+        </select>
+        <button>Search</button>
       </form>
     );
   }
