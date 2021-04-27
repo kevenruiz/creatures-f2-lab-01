@@ -10,24 +10,14 @@ export default class CreatureItem extends Component {
     return (
       //you can do the style at the end. do the classname on parent LI
 
-      <li>
-        <div>
-          <h2>Name:</h2>
-          {creature.title}
-        </div>
-        <div>
-          <h2>Decription:</h2>
-          {creature.decription}
-        </div>
-        <div>
-          <h2>Keyword:</h2>
-          {creature.keyword}
-        </div>
-        <div>
-          <h2>Horns:</h2>
-          {creature.horns}
-        </div>
+      <li className='CreatureItem'>
+
+        <h2>
+          {creature.title}</h2>
         <img src={creature.url} alt={creature.title} />
+        <p>{creature.description}</p>
+        {creature.keyword}
+
       </li>
 
 
