@@ -9,6 +9,7 @@ import creatures from './Creatures';
 
 import './App.css';
 import React from 'react';
+import CreatureSearch from './CreatureSearch';
 
 class App extends Component {
 
@@ -20,7 +21,7 @@ class App extends Component {
 
         <main>
           <CreatureList creature={creatures} />
-
+          <CreatureSearch />
 
         </main>
 
