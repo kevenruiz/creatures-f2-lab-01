@@ -7,7 +7,7 @@ export default class CreatureSearch extends Component {
     return (
       <form>
         <div className="CreatureSearch">
-          Hello this is going to be my word place holder for my Creature Search
+          Wire in search component
 
         </div>
       </form>
