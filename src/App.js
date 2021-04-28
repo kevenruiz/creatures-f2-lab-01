@@ -2,7 +2,7 @@
 import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import CreatureList from './Item';
+import CreatureList from './CreatureList';
 //data that is imported is to be lower cased.
 import creaturesData from './creaturesData';
 

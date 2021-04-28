@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-import CreatureItem from './CreatureItem';
+import './CreatureItem.css';
 
-import './CreatureList.css';
+export default class CreatureItem extends Component {
 
-export default class CreatureList extends Component {
   render() {
-    const creatures = this.props.creatures;
+
+    const creature = this.props.creature;
 
     return (
+      //you can do the style at the end. do the classname on parent LI
 
-      <ul className="CreatureList">
-        {
-          creatures.map(creature => (
-            <CreatureItem creature={creature} key={creature.title} />
-          ))
-        }
-      </ul>
+      <li className='CreatureItem'>
+
+        <h2>
+          {creature.title}</h2>
+        <img src={creature.url} alt={creature.title} />
+        <p>{creature.description}</p>
+        {creature.keyword}
+
+      </li>
+
 
     );
   }
 }
+
+
+
+
+
