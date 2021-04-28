@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CreatureItem from './Item';
+import CreatureItem from './CreatureItem';
 
 import './CreatureList.css';
 
