@@ -13,6 +13,9 @@ import CreatureSearch from './CreatureSearch';
 
 class App extends Component {
 
+  handleSearch = (search) => {
+    console.log(search);
+  }
   render() {
 
     return (
@@ -20,7 +23,7 @@ class App extends Component {
         <Header />
 
         <main>
-          <CreatureSearch />
+          <CreatureSearch onSearch={this.handleSearch} />
           <CreatureList creature={creatures} />
 
 
