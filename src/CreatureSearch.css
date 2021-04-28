@@ -1,0 +1,31 @@
+.CreatureSearch {
+  display: flex;
+  padding: 20px 20px;
+  background: aquamarine;
+ 
+  
+
+
+
+}
+
+.CreatureSearch input {
+  width: 100px;
+  height: 30px;
+  flex-grow: 2;
+  outline: 0;
+
+}
+
+.CreatureSearch select {
+  width: 150px;
+  height: 36px;
+  flex-grow: 1;
+
+}
+
+.CatSearch button {
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+}
