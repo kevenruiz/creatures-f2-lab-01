@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import CreatureList from './CreatureList';
 //data that is imported is to be lower cased.
-import creaturesData from './Creatures';
+import creaturesData from './creaturesData';
 
 
 import './App.css';
@@ -25,7 +25,7 @@ class App extends Component {
 
     const searchedData = creaturesData
       .filter(creature => {
-        return creature.name.match(nameRegex);
+        return creature.title.match(nameRegex);
 
       })
       .filter(creature => {
