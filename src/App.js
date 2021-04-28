@@ -4,27 +4,57 @@ import Header from './Header';
 import Footer from './Footer';
 import CreatureList from './CreatureList';
 //data that is imported is to be lower cased.
-import creatures from './Creatures';
+import creaturesData from './Creatures';
 
 
 import './App.css';
 import React from 'react';
 import CreatureSearch from './CreatureSearch';
 
-class App extends Component {
+const creatureHorns = [...new Set(creaturesData.map(c => c.horns))];
 
-  handleSearch = (search) => {
-    console.log(search);
+
+
+class App extends Component {
+  state = {
+    creatures: creaturesData
   }
+
+  handleSearch = ({ nameFilter, sortField, hornsFilter }) => {
+    const nameRegex = new RegExp(nameFilter, 'i');
+
+    const searchedData = creaturesData
+      .filter(creature => {
+        return creature.name.match(nameRegex);
+
+      })
+      .filter(creature => {
+        return !hornsFilter || creature.horns === hornsFilter;
+
+      })
+      .sort((a, b) => {
+        if (a[sortField] < b[sortField]) return -1;
+        if (a[sortField] > b[sortField]) return 1;
+        return 0;
+      });
+
+    this.setState({ creatures: searchedData });
+
+  }
+
   render() {
 
+    const { creatures } = this.state;
     return (
       <div className="App">
         <Header />
 
+        <CreatureSearch horns={creatureHorns} onSearch={this.handleSearch} />
+
         <main>
-          <CreatureSearch onSearch={this.handleSearch} />
-          <CreatureList creature={creatures} />
+
+
+          <CreatureList creatures={creatures} />
 
 
         </main>

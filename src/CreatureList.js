@@ -5,13 +5,13 @@ import './CreatureList.css';
 
 export default class CreatureList extends Component {
   render() {
-    const creature = this.props.creature;
+    const creatures = this.props.creatures;
 
     return (
       <div>
         <ul className="CreatureList">
           {
-            creature.map(creature => (
+            creatures.map(creature => (
               <CreatureItem creature={creature} key={creature.title} />
             ))
           }
