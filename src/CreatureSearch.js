@@ -16,7 +16,7 @@ export default class CatSearch extends Component {
     this.setState({ sortField: target.value });
   }
 
-  handleTypeChange = ({ target }) => {
+  handleHornsChange = ({ target }) => {
     this.setState({ hornsFilter: target.value });
   }
 
@@ -31,23 +31,37 @@ export default class CatSearch extends Component {
   }
 
   render() {
+    const { nameFilter, sortField, hornsFilter } = this.state;
+    const { horns } = this.props;
+
     return (
       <form className='CreatureSearch' onSubmit={this.handleSubmit}>
         <input
-          name='nameSearch'
-       //   value={nameSearch}
+          name='nameFilter'
+          value={nameFilter}
           onChange={this.handleNameChange}
 
         />
         <select
           name='sortField'
-       //   value={sortField}
+          value={sortField}
           onChange={this.handleSearchChange}
         >
           <option value="">sort...</option>
           <option value="name">by name</option>
           <option value="horns">by horns</option>
         </select>
+        <select
+          name="hornsFilter"
+          value={hornsFilter}
+          onChange={this.handleHornsChange}
+        >
+          <option value="">All</option>
+          {horns.map(type => (
+            <option key={horns} value={horns}>{horns}</option>
+          ))}
+        </select>
+
         <button>Search</button>
       </form>
     );

@@ -8,15 +8,15 @@ export default class CreatureList extends Component {
     const creatures = this.props.creatures;
 
     return (
-      <div>
-        <ul className="CreatureList">
-          {
-            creatures.map(creature => (
-              <CreatureItem creature={creature} key={creature.title} />
-            ))
-          }
-        </ul>
-      </div>
+
+      <ul className="CreatureList">
+        {
+          creatures.map(creature => (
+            <CreatureItem creature={creature} key={creature.title} />
+          ))
+        }
+      </ul>
+
     );
   }
 }
